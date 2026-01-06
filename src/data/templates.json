@@ -3,8 +3,48 @@
     "id": "ot-record-initiation",
     "displayName": "OT Record Initiation",
     "subject": "OT Record Initiation - [NAME] - [YYYYMMMDD]",
-    "body": "Hi [Sender],\r\n\r\n\tI'll have an OT for the following:\r\n•\tOT Date: [YYYY-MM-DD]\r\n•\tPlanned start Time: [00:00]\r\n•\tEstimated OT Hours: [X hours]\r\n•\tTask Description: [Task]\r\n\r\nThis is for initiating OT records, you may ignore this mail.\r\n\r\nThanks.",
+    "body": "Hi  ,\r\n\r\n\tI'll have an OT for the following:\r\n•\tOT Date: [YYYY-MM-DD]\r\n•\tPlanned start Time: [00:00]\r\n•\tEstimated OT Hours: [X hours]\r\n•\tTask Description: [Task]\r\n\r\nThis is for initiating OT records, you may ignore this mail.\r\n\r\nThanks.",
+    "htmlBody": "<p>Hi  ,</p><p style='margin-left: 2em;'>I'll have an OT for the following:</p><ul style='margin-left: 3em;'><li><strong style='font-weight: bold;'>OT Date:</strong> [YYYY-MM-DD]</li><li><strong style='font-weight: bold;'>Planned start Time:</strong> [00:00]</li><li><strong style='font-weight: bold;'>Estimated OT Hours:</strong> [X hours]</li><li><strong style='font-weight: bold;'>Task Description:</strong> [Task]</li></ul><p style='margin-left: 2em; font-style: italic; color: #8B0000;'>This is for initiating OT records, you may ignore this mail.</p><p>Thanks.</p>",
     "placeholders": ["NAME", "YYYYMMMDD", "Sender", "YYYY-MM-DD", "00:00", "X hours", "Task"],
+    "builder": {
+      "strategy": "owa_then_mailto",
+      "owa": "https://outlook.office.com/mail/deeplink/compose",
+      "mailto": "mailto:"
+    }
+  },
+  {
+    "id": "ot-completed",
+    "displayName": "OT Completed",
+    "subject": "OT Completed - [NAME] - [YYYYMMMDD]",
+    "body": "Hi  ,\r\n\r\n\tThe OT task has been completed. Please find the actual details below:\r\n•\tActual Time: [START-TIME] - [END-TIME]\r\n•\tActual OT Hours: [X hours]\r\n•\tJira/SR/CR: [ID]\r\n•\tRemark: [REMARK]\r\n•\tOT Compensation Type: [COMPENSATION]\r\n\r\nThanks.",
+    "htmlBody": "<p>Hi  ,</p><p style='margin-left: 2em;'>The OT task has been completed. Please find the actual details below:</p><ul style='margin-left: 3em;'><li><strong style='font-weight: bold;'>Actual Time:</strong> [START-TIME] - [END-TIME]</li><li><strong style='font-weight: bold;'>Actual OT Hours:</strong> [X hours]</li><li><strong style='font-weight: bold;'>Jira/SR/CR:</strong> [ID]</li><li><strong style='font-weight: bold;'>Remark:</strong> [REMARK]</li><li><strong style='font-weight: bold;'>OT Compensation Type:</strong> [COMPENSATION]</li></ul><p>Thanks.</p>",
+    "placeholders": ["NAME", "YYYYMMMDD", "START-TIME", "END-TIME", "X hours", "ID", "REMARK", "COMPENSATION"],
+    "builder": {
+      "strategy": "owa_then_mailto",
+      "owa": "https://outlook.office.com/mail/deeplink/compose",
+      "mailto": "mailto:"
+    }
+  },
+  {
+    "id": "wfh-request",
+    "displayName": "WFH Request",
+    "subject": "WFH Request - [WFH-TYPE] - [NAME] - [YYYYMMMDD]",
+    "body": "Hi  ,\r\n\r\n\tI would like to request WFH for the following period:\r\n•\tWFH Dates: [WFH-DATES] - for [WFH-TYPE]\r\n•\tReason: [REASON]\r\n\r\nThanks.",
+    "htmlBody": "<p>Hi  ,</p><p style='margin-left: 2em;'>I would like to request WFH for the following period:</p><ul style='margin-left: 3em;'><li><strong style='font-weight: bold;'>WFH Dates:</strong> [WFH-DATES] <strong style='font-weight: bold;'>- for [WFH-TYPE]</strong></li><li><strong style='font-weight: bold;'>Reason:</strong> [REASON]</li></ul><p>Thanks.</p>",
+    "placeholders": ["NAME", "YYYYMMMDD", "WFH-TYPE", "WFH-DATES", "REASON"],
+    "builder": {
+      "strategy": "owa_then_mailto",
+      "owa": "https://outlook.office.com/mail/deeplink/compose",
+      "mailto": "mailto:"
+    }
+  },
+  {
+    "id": "leave-request",
+    "displayName": "Leave Request",
+    "subject": "Leave Request - [NAME] - [YYYYMMMDD]",
+    "body": "Hi  ,\r\n\r\n\tI would like to request leave from [START-DATE] to [END-DATE].\r\n•\tReason for leave: [REASON]\r\n•\tBackup plan: During my absence, [BACKUP] will cover my responsibilities.\r\n•\tContact: [CONTACT]\r\n\r\nThanks.",
+    "htmlBody": "<p>Hi  ,</p><p style='margin-left: 2em;'>I would like to request leave from [START-DATE] to [END-DATE].</p><ul style='margin-left: 3em;'><li><strong style='font-weight: bold;'>Reason for leave:</strong> [REASON]</li><li><strong style='font-weight: bold;'>Backup plan:</strong> During my absence, [BACKUP] will cover my responsibilities.</li><li><strong style='font-weight: bold;'>Contact:</strong> [CONTACT]</li></ul><p>Thanks.</p>",
+    "placeholders": ["NAME", "YYYYMMMDD", "START-DATE", "END-DATE", "REASON", "BACKUP", "CONTACT"],
     "builder": {
       "strategy": "owa_then_mailto",
       "owa": "https://outlook.office.com/mail/deeplink/compose",

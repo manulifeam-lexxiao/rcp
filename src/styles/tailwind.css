@@ -71,6 +71,20 @@
     background-color: #fff;
   }
 
+  /* 日期和时间输入框样式，图标靠左 */
+  input[type="date"],
+  input[type="time"] {
+    position: relative;
+    padding-left: 50px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 12px;
+    cursor: pointer;
+  }
+
   .textarea {
     @apply w-full px-4 py-3 border border-neutral-border rounded focus:outline-none focus:ring-2 focus:ring-success focus:border-success transition-all duration-200 resize-y;
     background-color: #fff;

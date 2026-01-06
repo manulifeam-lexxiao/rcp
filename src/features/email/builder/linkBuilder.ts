@@ -11,3 +11,11 @@ export function buildLinks(subject: string, body: string): LinkPair {
     mailto: `mailto:?subject=${s}&body=${b}`,
   };
 }
+
+// 构建mailto链接（纯文本格式）
+export function buildMailtoLink(subject: string, body: string): string {
+  const s = encodeURIComponent(subject);
+  const b = encodeURIComponent(body);
+  
+  return `mailto:?subject=${s}&body=${b}`;
+}

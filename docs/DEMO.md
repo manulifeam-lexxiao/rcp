@@ -78,7 +78,7 @@ npm run dev
 #### Home 页面
 - 地址：`/home`
 - 功能：显示当日 WFH 和请假信息
-- 数据来源：`src/data/attendance.json`
+- 数据来源：`src/data/wfh.json` 和 `src/data/leave.json`
 
 #### Emailer 页面
 - 地址：`/emailer`

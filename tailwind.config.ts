@@ -7,6 +7,7 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#282B3E',
+          dark: '#1f2130',
           50: '#f7f7f8',
           100: '#e8e8eb',
           200: '#d1d2d7',

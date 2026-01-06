@@ -5,6 +5,7 @@ export const EmailTemplateSchema = z.object({
   displayName: z.string(),
   subject: z.string(),
   body: z.string(),
+  htmlBody: z.string().optional(),
   placeholders: z.array(z.string()).default([]),
   builder: z.object({
     strategy: z.enum(['owa_then_mailto']),

@@ -4,7 +4,7 @@ import { formatYYYYMMMDD } from '@/utils/date';
 type TokenValues = Record<string, string>;
 
 export function resolveTokens(tpl: EmailTemplate, values: TokenValues) {
-  const dateStr = values['YYYY-MM-DD'];
+  const dateStr = values['YYYY-MM-DD'] || values['START-DATE'];
   const yyyymmmdd = dateStr
     ? formatYYYYMMMDD(new Date(dateStr))
     : formatYYYYMMMDD(new Date());
@@ -17,11 +17,24 @@ export function resolveTokens(tpl: EmailTemplate, values: TokenValues) {
     'X hours': values['X hours'] ?? '',
     YYYYMMMDD: yyyymmmdd,
     Task: values.Task ?? '',
+    'START-DATE': values['START-DATE'] ?? '',
+    'END-DATE': values['END-DATE'] ?? '',
+    REASON: values.REASON ?? '',
+    BACKUP: values.BACKUP ?? '',
+    CONTACT: values.CONTACT ?? '',
+    'START-TIME': values['START-TIME'] ?? '',
+    'END-TIME': values['END-TIME'] ?? '',
+    ID: values.ID ?? '',
+    REMARK: values.REMARK ?? '',
+    COMPENSATION: values.COMPENSATION ?? '',
+    'WFH-TYPE': values['WFH-TYPE'] ?? '',
+    'WFH-DATES': values['WFH-DATES'] ?? '',
   };
 
   return {
     subject: replaceTokens(tpl.subject, tokens),
     body: replaceTokens(tpl.body, tokens),
+    htmlBody: tpl.htmlBody ? replaceTokens(tpl.htmlBody, tokens) : undefined,
   };
 }
 
