@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]   # 如果不是 main，这里改成你的分支名
+  workflow_dispatch:      # 允许手动点按钮触发
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.6     # 用你项目支持的 Node 版本
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci                 # 如果你不用 package-lock，可以改成 npm install
+
+      - name: Build
+        run: npm run build          # 这里会生成 dist
+        env:
+          GITHUB_PAGES: true        # 告诉 Vite 这是 GitHub Pages 部署
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist              # 如果构建目录不是 dist，在这里改
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

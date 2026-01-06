@@ -1,0 +1,4 @@
+[
+  { "id": "home", "label": "Home", "path": "/home", "enabled": true },
+  { "id": "emailer", "label": "Emailer", "path": "/emailer", "enabled": true }
+]

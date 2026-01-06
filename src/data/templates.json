@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ot-record-initiation",
+    "displayName": "OT Record Initiation",
+    "subject": "OT Record Initiation - [NAME] - [YYYYMMMDD]",
+    "body": "Hi [Sender],\r\n\r\n\tI'll have an OT for the following:\r\n•\tOT Date: [YYYY-MM-DD]\r\n•\tPlanned start Time: [00:00]\r\n•\tEstimated OT Hours: [X hours]\r\n•\tTask Description: [Task]\r\n\r\nThis is for initiating OT records, you may ignore this mail.\r\n\r\nThanks.",
+    "placeholders": ["NAME", "YYYYMMMDD", "Sender", "YYYY-MM-DD", "00:00", "X hours", "Task"],
+    "builder": {
+      "strategy": "owa_then_mailto",
+      "owa": "https://outlook.office.com/mail/deeplink/compose",
+      "mailto": "mailto:"
+    }
+  }
+]
