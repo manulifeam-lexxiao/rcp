@@ -1,7 +1,5 @@
 # Retirement Chengdu Portal
 
-成都退休金管理门户系统 - WFH/请假信息展示 + 邮件生成器
-
 ## 快速开始
 
 ```bash
