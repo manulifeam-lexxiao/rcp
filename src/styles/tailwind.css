@@ -2,24 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply font-sans bg-white text-primary;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans text-primary;
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 0 24px;
+  }
+
+  a {
+    @apply text-primary hover:text-accent transition-colors duration-200;
+    text-decoration: none;
+  }
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply bg-primary hover:bg-primary-600 text-white font-demibold py-3 px-8 rounded transition-all duration-200 focus:outline-none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+    @apply bg-neutral-light hover:bg-white text-primary font-demibold py-3 px-8 rounded border border-neutral-border transition-all duration-200 focus:outline-none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-700 text-white font-demibold py-3 px-8 rounded transition-all duration-200 focus:outline-none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   .input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+    @apply w-full px-4 py-3 border border-neutral-border rounded focus:outline-none focus:ring-2 focus:ring-success focus:border-success transition-all duration-200;
+    background-color: #fff;
   }
 
   .textarea {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-y;
+    @apply w-full px-4 py-3 border border-neutral-border rounded focus:outline-none focus:ring-2 focus:ring-success focus:border-success transition-all duration-200 resize-y;
+    background-color: #fff;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4;
+    @apply bg-white rounded shadow-sm border border-neutral-border p-6;
+  }
+
+  .section {
+    @apply py-16 px-10;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-10;
+  }
+
+  .nav-link {
+    @apply text-primary hover:text-accent font-demibold no-underline transition-colors duration-200;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .tab-active {
+    @apply border-b-4 border-success;
   }
 }
