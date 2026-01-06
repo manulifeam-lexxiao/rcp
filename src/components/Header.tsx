@@ -21,7 +21,7 @@ export default function Header() {
 
           {/* Manulife Logo */}
           <div className="flex items-center gap-4 pl-3">
-            <img src="/logo_manulife.svg" alt="Manulife" width="120" height="22" />
+            <img src={`${import.meta.env.BASE_URL}logo_manulife.svg`} alt="Manulife" width="120" height="22" />
             <div>
               <div className="text-primary leading-tight" style={{ fontFamily: 'ManulifeJHSans-Demibold, Arial, sans-serif', fontSize: '27px' }}>
                 Retirement ChengDu Portal
