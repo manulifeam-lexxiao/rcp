@@ -28,7 +28,7 @@ export default function Sidebar() {
   const features = useFeatureList();
 
   return (
-    <nav className="flex flex-col py-0 px-0 bg-primary min-h-screen">
+    <nav className="flex flex-col py-0 px-0 bg-primary h-full">
       {features.map((f, index) => (
         <div key={f.id}>
           <NavLink

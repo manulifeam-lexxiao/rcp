@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-light">
+    <div className="h-screen flex flex-col bg-neutral-light">
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <div className="h-full w-[85px]">
