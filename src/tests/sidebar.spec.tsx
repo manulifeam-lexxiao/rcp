@@ -24,7 +24,7 @@ describe('Sidebar Component', () => {
     
     const sidebar = container.firstChild;
     expect(sidebar).toHaveClass('bg-primary');
-    expect(sidebar).toHaveClass('min-h-screen');
+    expect(sidebar).toHaveClass('h-full');
   });
 
   it('should render navigation items', () => {
