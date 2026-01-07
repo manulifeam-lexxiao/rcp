@@ -19,7 +19,6 @@ type FormValues = z.infer<typeof FormSchema>;
 export function WFHForm() {
   const {
     register,
-    handleSubmit,
     formState: { errors },
     setValue,
     watch,
@@ -29,7 +28,6 @@ export function WFHForm() {
   });
 
   const [htmlPreview, setHtmlPreview] = useState<string>('');
-  const [showPreview, setShowPreview] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
 
   // 从localStorage读取用户名
@@ -53,19 +51,56 @@ export function WFHForm() {
       });
       if (htmlBody) {
         setHtmlPreview(htmlBody);
-        setShowPreview(true); // 自动展开预览
       }
     } else {
-      setShowPreview(false); // 表单不完整时关闭预览
+      setHtmlPreview('');
     }
   }, [formValues]);
 
-  const onSubmit = (values: FormValues) => {
-    // 保存用户名到localStorage
-    if (values.name) {
-      window.localStorage.setItem('userName', values.name);
-    }
+  const handleCopyAndCreateEmail = async () => {
+    if (!htmlPreview) return;
     
+    try {
+      // 1. 先复制HTML内容到剪贴板（使用完整的HTML文档结构以兼容Outlook）
+      const fullHtml = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #000000;">
+${htmlPreview}
+</body>
+</html>`;
+      
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          'text/html': new Blob([fullHtml], { type: 'text/html' }),
+          'text/plain': new Blob([htmlPreview.replace(/<[^>]*>/g, '')], { type: 'text/plain' }),
+        }),
+      ]);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+
+      // 2. 打开只带主题的新邮件
+      const values = watch();
+      const tpl = Templates.get('wfh-request');
+      const { subject } = resolveTokens(tpl, {
+        NAME: values.name || '',
+        'WFH-TYPE': values.wfhType,
+        'WFH-DATES': values.wfhDates,
+        REASON: values.reason,
+      });
+      
+      const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}`;
+      window.location.href = mailtoLink;
+    } catch (err) {
+      console.error('复制失败:', err);
+    }
+  };
+
+  const handleCreatePlainEmail = () => {
+    const values = watch();
     const tpl = Templates.get('wfh-request');
     const { subject, body } = resolveTokens(tpl, {
       NAME: values.name || '',
@@ -74,30 +109,13 @@ export function WFHForm() {
       REASON: values.reason,
     });
 
-    // 直接打开客户端
     const mailtoLink = buildMailtoLink(subject, body);
     window.location.href = mailtoLink;
   };
 
-  const handleCopyHtml = async () => {
-    try {
-      // 复制HTML到剪贴板
-      await navigator.clipboard.write([
-        new ClipboardItem({
-          'text/html': new Blob([htmlPreview], { type: 'text/html' }),
-          'text/plain': new Blob([htmlPreview.replace(/<[^>]*>/g, '')], { type: 'text/plain' }),
-        }),
-      ]);
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    } catch (err) {
-      console.error('复制失败:', err);
-    }
-  };
-
   return (
     <div className="space-y-4">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -151,19 +169,13 @@ export function WFHForm() {
           />
           {errors.reason && <p className="text-red-500 text-sm mt-1">{errors.reason.message}</p>}
         </div>
-        <div>
-          <button type="submit" className="btn-primary">
-            创建邮件
-          </button>
-        </div>
       </form>
 
       <EmailPreview
         htmlPreview={htmlPreview}
-        showPreview={showPreview}
         copySuccess={copySuccess}
-        onTogglePreview={() => setShowPreview(!showPreview)}
-        onCopyHtml={handleCopyHtml}
+        onCopyAndCreateEmail={handleCopyAndCreateEmail}
+        onCreatePlainEmail={handleCreatePlainEmail}
       />
     </div>
   );
