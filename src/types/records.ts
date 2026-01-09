@@ -12,6 +12,7 @@ export type WFHRecord = z.infer<typeof WFHRecordSchema>;
 export const LeaveRecordSchema = z.object({
   name: z.string(),
   leaveDate: z.string(),
+  part: z.enum(['am', 'pm']).optional(),
 });
 
 export type LeaveRecord = z.infer<typeof LeaveRecordSchema>;

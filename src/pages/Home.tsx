@@ -123,9 +123,20 @@ export default function Home() {
               {leaveRecords.map((record, index) => (
                 <span 
                   key={`leave-${index}`} 
-                  className="px-3 py-2 text-primary text-sm font-light bg-accent bg-opacity-5 border border-accent border-opacity-20 rounded-md"
+                  className="px-3 py-2 text-primary text-sm font-light bg-accent bg-opacity-5 border border-accent border-opacity-20 rounded-md inline-flex items-center gap-2"
                 >
-                  {record.name}
+                  <span>{record.name}</span>
+                  {record.part ? (
+                    <span className="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-medium" 
+                          style={{ backgroundColor: record.part === 'am' ? '#FFE5CC' : '#CCE5FF', color: record.part === 'am' ? '#CC6600' : '#0066CC' }}>
+                      {record.part === 'am' ? '上午' : '下午'}
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-medium" 
+                          style={{ backgroundColor: '#E8F5E9', color: '#2E7D32' }}>
+                      全天
+                    </span>
+                  )}
                 </span>
               ))}
             </div>
@@ -286,6 +297,17 @@ export default function Home() {
                               <li key={`leave-${day.date}-${index}`} className="flex items-center gap-2 text-sm text-primary">
                                 <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></span>
                                 <span className="font-light text-xs">{record.name}</span>
+                                {record.part ? (
+                                  <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium ml-1" 
+                                        style={{ backgroundColor: record.part === 'am' ? '#FFE5CC' : '#CCE5FF', color: record.part === 'am' ? '#CC6600' : '#0066CC' }}>
+                                    {record.part === 'am' ? '上午' : '下午'}
+                                  </span>
+                                ) : (
+                                  <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium ml-1" 
+                                        style={{ backgroundColor: '#E8F5E9', color: '#2E7D32' }}>
+                                    全天
+                                  </span>
+                                )}
                               </li>
                             ))}
                           </ul>

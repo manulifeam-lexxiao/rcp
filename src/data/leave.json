@@ -3,8 +3,15 @@
     "name": "Dave Meng",
     "leaveDate": "2026-01-19"
   },
-    {
+  {
     "name": "Layne Wang",
     "leaveDate": "2026-01-08"
-  }
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-01-09",
+    "part": "pm"
+  },
+  { "name": "Alex Yang", "leaveDate": "2026-02-11" },
+  {"name":"Dave Meng","leaveDate":"2026-02-20"}
 ]
