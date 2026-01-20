@@ -31,3 +31,8 @@ coverage
 .env
 .env.local
 .env.*.local
+
+# Excel files (local data source)
+*.xlsx
+*.xls
+*.xlsm

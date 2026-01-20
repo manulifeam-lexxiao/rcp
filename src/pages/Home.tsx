@@ -11,25 +11,25 @@ export default function Home() {
   
   // 英文星期缩写映射
   const weekdayEnToZh: Record<string, string> = {
-    'mon': '周一',
-    'tue': '周二',
-    'wed': '周三',
-    'thu': '周四',
-    'fri': '周五',
+    'MON': '周一',
+    'TUE': '周二',
+    'WED': '周三',
+    'THU': '周四',
+    'FRI': '周五',
   };
   
   // 中文到英文的反向映射
   const weekdayZhToEn: Record<string, string> = {
-    '周一': 'mon',
-    '周二': 'tue',
-    '周三': 'wed',
-    '周四': 'thu',
-    '周五': 'fri',
+    '周一': 'MON',
+    '周二': 'TUE',
+    '周三': 'WED',
+    '周四': 'THU',
+    '周五': 'FRI',
   };
   
   // 读取WFH和请假数据
   const currentWeekdayEn = weekdayZhToEn[currentWeekday] || '';
-  const wfhRecords = WFHData.getWFHToday(currentWeekdayEn);
+  const wfhNames = WFHData.getWFHToday(currentWeekdayEn, today);
   const leaveRecords = LeaveData.getToday(today);
   const allWFHRecords = WFHData.getAll();
   const nextWeekLeaveRecords = LeaveData.getNextWeek();
@@ -79,14 +79,14 @@ export default function Home() {
               <p className="text-sm text-gray-500 font-light">{currentWeekday}</p>
             </div>
           </div>
-          {wfhRecords.length > 0 ? (
+          {wfhNames.length > 0 ? (
             <div className="flex flex-wrap gap-3">
-              {wfhRecords.map((record, index) => (
+              {wfhNames.map((name, index) => (
                 <span 
                   key={`wfh-${index}`} 
                   className="px-3 py-2 text-primary text-sm font-light bg-success bg-opacity-5 border border-success border-opacity-20 rounded-md"
                 >
-                  {record.name}
+                  {name}
                 </span>
               ))}
             </div>
@@ -210,9 +210,11 @@ export default function Home() {
                       if (!acc[record.name]) {
                         acc[record.name] = {};
                       }
-                      // 将英文缩写转换为中文显示
-                      const zhWeekday = weekdayEnToZh[record.weekday] || record.weekday;
-                      acc[record.name][zhWeekday] = true;
+                      // 处理 weekdays 数组
+                      record.weekdays.forEach(weekday => {
+                        const zhWeekday = weekdayEnToZh[weekday.toLowerCase()] || weekday;
+                        acc[record.name][zhWeekday] = true;
+                      });
                       return acc;
                     }, {} as Record<string, Record<string, boolean>>);
 

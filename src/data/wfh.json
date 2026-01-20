@@ -1,54 +1,194 @@
 [
-  {"name": "Alex Yang", "weekday": "thu"},
-  {"name": "Alex Yang", "weekday": "fri"},
-  {"name": "Allen Qiao", "weekday": "mon"},
-  {"name": "Allen Qiao", "weekday": "tue"},
-  {"name": "Antony Liu", "weekday": "wed"},
-  {"name": "Antony Liu", "weekday": "thu"},
-  {"name": "Dave Meng", "weekday": "mon"},
-  {"name": "Dave Meng", "weekday": "tue"},
-  {"name": "DK Xiong", "weekday": "mon"},
-  {"name": "DK Xiong", "weekday": "tue"},
-  {"name": "Hans Xiao", "weekday": "thu"},
-  {"name": "Hans Xiao", "weekday": "fri"},
-  {"name": "Hilin Ren", "weekday": "tue"},
-  {"name": "Hilin Ren", "weekday": "wed"},
-  {"name": "Iron Xia", "weekday": "tue"},
-  {"name": "Iron Xia", "weekday": "wed"},
-  {"name": "Jack Yu", "weekday": "tue"},
-  {"name": "Jack Yu", "weekday": "wed"},
-  {"name": "Jim Hu", "weekday": "tue"},
-  {"name": "Jim Hu", "weekday": "thu"},
-  {"name": "Layne Wang", "weekday": "mon"},
-  {"name": "Layne Wang", "weekday": "tue"},
-  {"name": "Leslie Wang", "weekday": "thu"},
-  {"name": "Leslie Wang", "weekday": "fri"},
-  {"name": "Louis Meng", "weekday": "mon"},
-  {"name": "Louis Meng", "weekday": "fri"},
-  {"name": "Mark Ma", "weekday": "mon"},
-  {"name": "Mark Ma", "weekday": "fri"},
-  {"name": "Max Chen", "weekday": "thu"},
-  {"name": "Max Chen", "weekday": "fri"},
-  {"name": "Monster Wang", "weekday": "mon"},
-  {"name": "Monster Wang", "weekday": "thu"},
-  {"name": "Nevin Li", "weekday": "mon"},
-  {"name": "Nevin Li", "weekday": "tue"},
-  {"name": "Oliver Dong", "weekday": "wed"},
-  {"name": "Oliver Dong", "weekday": "thu"},
-  {"name": "Parry Pan", "weekday": "mon"},
-  {"name": "Parry Pan", "weekday": "fri"},
-  {"name": "Peter Li", "weekday": "thu"},
-  {"name": "Peter Li", "weekday": "fri"},
-  {"name": "Rain Gu", "weekday": "tue"},
-  {"name": "Rain Gu", "weekday": "thu"},
-  {"name": "Reese Li", "weekday": "mon"},
-  {"name": "Reese Li", "weekday": "tue"},
-  {"name": "Tony Zhong", "weekday": "mon"},
-  {"name": "Tony Zhong", "weekday": "wed"},
-  {"name": "Vae Wang", "weekday": "tue"},
-  {"name": "Vae Wang", "weekday": "wed"},
-  {"name": "Watson Wen", "weekday": "thu"},
-  {"name": "Watson Wen", "weekday": "fri"},
-  {"name": "Zick Ling", "weekday": "mon"},
-  {"name": "Zick Ling", "weekday": "tue"}
+  {
+    "name": "Alex Yang",
+    "weekdays": [
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Allen Qiao",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Antony Liu",
+    "weekdays": [
+      "WED",
+      "THU"
+    ]
+  },
+  {
+    "name": "Dave Meng",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "DK Xiong",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Hans Xiao",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Hilin Ren",
+    "weekdays": [
+      "TUE",
+      "WED"
+    ]
+  },
+  {
+    "name": "Iron Xia",
+    "weekdays": [
+      "TUE",
+      "WED"
+    ]
+  },
+  {
+    "name": "Jack Yu",
+    "weekdays": [
+      "TUE",
+      "WED"
+    ]
+  },
+  {
+    "name": "Jim Hu",
+    "weekdays": [
+      "TUE",
+      "THU"
+    ]
+  },
+  {
+    "name": "Layne Wang",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Leslie Wang",
+    "weekdays": [
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Louis Meng",
+    "weekdays": [
+      "MON",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Luffy Ji",
+    "weekdays": [
+      "MON",
+      "TUE",
+      "WED",
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Mark Ma",
+    "weekdays": [
+      "MON",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Max Chen",
+    "weekdays": [
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Monster Wang",
+    "weekdays": [
+      "MON",
+      "THU"
+    ]
+  },
+  {
+    "name": "Nevin Li",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Oliver Dong",
+    "weekdays": [
+      "WED",
+      "THU"
+    ]
+  },
+  {
+    "name": "Parry Pan",
+    "weekdays": [
+      "MON",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Peter Li",
+    "weekdays": [
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Rain Gu",
+    "weekdays": [
+      "TUE",
+      "THU"
+    ]
+  },
+  {
+    "name": "Reese Li",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  },
+  {
+    "name": "Tony Zhong",
+    "weekdays": [
+      "MON",
+      "WED"
+    ]
+  },
+  {
+    "name": "Vae Wang",
+    "weekdays": [
+      "TUE",
+      "WED"
+    ]
+  },
+  {
+    "name": "Watson Wen",
+    "weekdays": [
+      "THU",
+      "FRI"
+    ]
+  },
+  {
+    "name": "Zick Ling",
+    "weekdays": [
+      "MON",
+      "TUE"
+    ]
+  }
 ]
