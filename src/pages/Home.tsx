@@ -212,7 +212,7 @@ export default function Home() {
                       }
                       // 处理 weekdays 数组
                       record.weekdays.forEach(weekday => {
-                        const zhWeekday = weekdayEnToZh[weekday.toLowerCase()] || weekday;
+                        const zhWeekday = weekdayEnToZh[weekday] || weekday;
                         acc[record.name][zhWeekday] = true;
                       });
                       return acc;
