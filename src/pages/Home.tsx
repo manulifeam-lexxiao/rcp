@@ -32,18 +32,27 @@ export default function Home() {
   const wfhNames = WFHData.getWFHToday(currentWeekdayEn, today);
   const leaveRecords = LeaveData.getToday(today);
   const allWFHRecords = WFHData.getAll();
-  const nextWeekLeaveRecords = LeaveData.getNextWeek();
+  // 获取从今天开始的7天请假记录
+  const next7DaysLeaveRecords = LeaveData.getAll().filter(record => {
+    const leaveDate = new Date(record.leaveDate);
+    const todayDate = new Date();
+    const endDate = addDays(todayDate, 6);
+    todayDate.setHours(0, 0, 0, 0);
+    endDate.setHours(23, 59, 59, 999);
+    return leaveDate >= todayDate && leaveDate <= endDate;
+  }).sort((a, b) => new Date(a.leaveDate).getTime() - new Date(b.leaveDate).getTime());
   
   // WFH表格折叠状态
   const [isWFHExpanded, setIsWFHExpanded] = useState(false);
   
-  // 生成未来7天的日期
+  // 生成未来7天的日期（从今天开始）
   const next7Days = Array.from({ length: 7 }, (_, i) => {
     const date = addDays(new Date(), i);
     return {
       date: format(date, 'yyyy-MM-dd'),
       dayName: weekdayMap[date.getDay()],
       displayDate: format(date, 'MM/dd'),
+      isToday: i === 0,
     };
   });
 
@@ -148,7 +157,7 @@ export default function Home() {
 
       {/* WFH 安排表 & 未来一周请假 - 左右分布 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* WFH 安排表 */}
+        {/* 常规 WFH 安排表 */}
         <section className="card">
           <div className="flex items-center justify-between mb-6 pb-3 border-b border-gray-200">
             <div className="flex items-center gap-3">
@@ -167,7 +176,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h2 className="text-20 font-demibold text-primary">WFH 安排表</h2>
+              <h2 className="text-20 font-demibold text-primary">常规 WFH 安排表</h2>
             </div>
             <button
               onClick={() => setIsWFHExpanded(!isWFHExpanded)}
@@ -249,7 +258,15 @@ export default function Home() {
             </div>
           )}
           {!isWFHExpanded && (
-            <p className="text-gray-400 text-sm text-center py-8 font-light">点击展开查看完整WFH安排</p>
+            <button
+              onClick={() => setIsWFHExpanded(true)}
+              className="w-full py-4 text-sm font-medium text-primary bg-gray-50 hover:bg-gray-100 rounded transition-colors flex items-center justify-center gap-2"
+            >
+              <span>点击展开查看完整WFH安排</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
           )}
         </section>
 
@@ -278,7 +295,7 @@ export default function Home() {
               <thead>
                 <tr className="bg-gray-50">
                   {next7Days.map((day) => (
-                    <th key={day.date} className="px-3 py-3 text-center border-b-2 border-r last:border-r-0 border-gray-200 min-w-[90px]">
+                    <th key={day.date} className="px-2 py-3 text-center border-b-2 border-r last:border-r-0 border-gray-200 w-[14.28%]">
                       <div className="text-sm font-demibold text-primary">{day.dayName}</div>
                       <div className="text-xs text-gray-500 font-light mt-1">{day.displayDate}</div>
                     </th>
@@ -288,31 +305,36 @@ export default function Home() {
               <tbody>
                 <tr>
                   {next7Days.map((day) => {
-                    const leavesOnDay = nextWeekLeaveRecords.filter(
+                    const leavesOnDay = next7DaysLeaveRecords.filter(
                       (record) => record.leaveDate === day.date
                     );
                     return (
-                      <td key={day.date} className="px-3 py-4 border-b border-r last:border-r-0 border-gray-200 align-top bg-white">
+                      <td key={day.date} className="px-1.5 py-3 border-b border-r last:border-r-0 border-gray-200 align-top bg-white w-[14.28%]">
                         {leavesOnDay.length > 0 ? (
-                          <ul className="space-y-2">
+                          <div className="space-y-2">
                             {leavesOnDay.map((record, index) => (
-                              <li key={`leave-${day.date}-${index}`} className="flex items-center gap-2 text-sm text-primary">
-                                <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></span>
-                                <span className="font-light text-xs">{record.name}</span>
+                              <div key={`leave-${day.date}-${index}`} 
+                                   className="flex items-center justify-between gap-1.5 px-1.5 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs hover:bg-gray-100 transition-colors">
+                                <span className="font-light text-primary truncate flex-1">{record.name}</span>
                                 {record.part ? (
-                                  <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium ml-1" 
-                                        style={{ backgroundColor: record.part === 'am' ? '#FFE5CC' : '#CCE5FF', color: record.part === 'am' ? '#CC6600' : '#0066CC' }}>
-                                    {record.part === 'am' ? '上午' : '下午'}
+                                  <span className="inline-flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold flex-shrink-0" 
+                                        style={{ 
+                                          backgroundColor: record.part === 'am' ? '#FFE5CC' : '#CCE5FF', 
+                                          color: record.part === 'am' ? '#CC6600' : '#0066CC' 
+                                        }}
+                                        title={record.part === 'am' ? '上午' : '下午'}>
+                                    {record.part === 'am' ? 'A' : 'P'}
                                   </span>
                                 ) : (
-                                  <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium ml-1" 
-                                        style={{ backgroundColor: '#E8F5E9', color: '#2E7D32' }}>
-                                    全天
+                                  <span className="inline-flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold flex-shrink-0" 
+                                        style={{ backgroundColor: '#E8F5E9', color: '#2E7D32' }}
+                                        title="全天">
+                                    F
                                   </span>
                                 )}
-                              </li>
+                              </div>
                             ))}
-                          </ul>
+                          </div>
                         ) : (
                           <p className="text-gray-300 text-xs text-center font-light">-</p>
                         )}
