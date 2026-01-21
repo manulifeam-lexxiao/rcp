@@ -45,7 +45,7 @@ export default function Home() {
   // WFH表格折叠状态
   const [isWFHExpanded, setIsWFHExpanded] = useState(false);
   
-  // 生成未来7天的日期（从今天开始）
+  // 生成未来7天的日期（从今天开始，排除周六周日）
   const next7Days = Array.from({ length: 7 }, (_, i) => {
     const date = addDays(new Date(), i);
     return {
@@ -53,8 +53,9 @@ export default function Home() {
       dayName: weekdayMap[date.getDay()],
       displayDate: format(date, 'MM/dd'),
       isToday: i === 0,
+      dayOfWeek: date.getDay(),
     };
-  });
+  }).filter(day => day.dayOfWeek !== 0 && day.dayOfWeek !== 6); // 排除周日(0)和周六(6)
 
   return (
     <div className="space-y-8">
@@ -83,10 +84,9 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div>
-              <h2 className="text-20 font-demibold text-primary">今日 WFH</h2>
-              <p className="text-sm text-gray-500 font-light">{currentWeekday}</p>
-            </div>
+            <h2 className="text-20 font-demibold text-primary">
+              今日 WFH <span className="text-gray-500 font-light text-base">- {currentWeekday}</span>
+            </h2>
           </div>
           {wfhNames.length > 0 ? (
             <div className="flex flex-wrap gap-3">
@@ -122,10 +122,9 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div>
-              <h2 className="text-20 font-demibold text-primary">今日请假</h2>
-              <p className="text-sm text-gray-500 font-light">{format(new Date(), 'MM月dd日')}</p>
-            </div>
+            <h2 className="text-20 font-demibold text-primary">
+              今日请假 <span className="text-gray-500 font-light text-base">- {format(new Date(), 'MM月dd日')}</span>
+            </h2>
           </div>
           {leaveRecords.length > 0 ? (
             <div className="flex flex-wrap gap-3">
@@ -295,7 +294,7 @@ export default function Home() {
               <thead>
                 <tr className="bg-gray-50">
                   {next7Days.map((day) => (
-                    <th key={day.date} className="px-2 py-3 text-center border-b-2 border-r last:border-r-0 border-gray-200 w-[14.28%]">
+                    <th key={day.date} className="px-2 py-3 text-center border-b-2 border-r last:border-r-0 border-gray-200">
                       <div className="text-sm font-demibold text-primary">{day.dayName}</div>
                       <div className="text-xs text-gray-500 font-light mt-1">{day.displayDate}</div>
                     </th>
@@ -309,7 +308,7 @@ export default function Home() {
                       (record) => record.leaveDate === day.date
                     );
                     return (
-                      <td key={day.date} className="px-1.5 py-3 border-b border-r last:border-r-0 border-gray-200 align-top bg-white w-[14.28%]">
+                      <td key={day.date} className="px-1.5 py-3 border-b border-r last:border-r-0 border-gray-200 align-top bg-white">
                         {leavesOnDay.length > 0 ? (
                           <div className="space-y-2">
                             {leavesOnDay.map((record, index) => (
