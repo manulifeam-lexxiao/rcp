@@ -8,10 +8,10 @@ import { buildMailtoLink } from '@/features/email/builder/linkBuilder';
 import { EmailPreview } from './EmailPreview';
 
 const FormSchema = z.object({
-  date: z.string().min(1, '请选择日期'),
-  start: z.string().min(1, '请选择开始时间'),
-  hours: z.string().min(1, '请输入预计加班小时数'),
-  task: z.string().min(1, '请输入任务描述'),
+  date: z.string().min(1, '选择日期'),
+  start: z.string().min(1, '选择开始时间'),
+  hours: z.string().min(1, '输入预计加班小时数'),
+  task: z.string().min(1, '输入任务描述'),
   name: z.string().optional(),
 });
 
@@ -199,7 +199,7 @@ ${htmlPreview}
             {...register('task')}
             className="textarea w-full"
             rows={4}
-            placeholder="请详细描述加班任务内容"
+            placeholder="描述加班内容，可放Jira/SR/CR编号"
           />
           {errors.task && <p className="text-red-500 text-sm mt-1">{errors.task.message}</p>}
         </div>

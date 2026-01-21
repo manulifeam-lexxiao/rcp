@@ -8,12 +8,12 @@ import { buildMailtoLink } from '@/features/email/builder/linkBuilder';
 import { EmailPreview } from './EmailPreview';
 
 const FormSchema = z.object({
-  startTime: z.string().min(1, '请选择开始时间'),
-  endTime: z.string().min(1, '请选择结束时间'),
-  hours: z.string().min(1, '请输入实际加班小时数'),
+  startTime: z.string().min(1, '选择开始时间'),
+  endTime: z.string().min(1, '选择结束时间'),
+  hours: z.string().min(1, '输入实际加班小时数'),
   id: z.string().optional(),
-  remark: z.string().min(1, '请输入备注'),
-  compensation: z.string().min(1, '请选择补偿类型'),
+  remark: z.string().min(1, '输入备注'),
+  compensation: z.string().min(1, '选择补偿类型'),
   name: z.string().optional(),
 });
 

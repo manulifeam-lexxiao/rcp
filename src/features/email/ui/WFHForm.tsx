@@ -8,9 +8,9 @@ import { buildMailtoLink } from '@/features/email/builder/linkBuilder';
 import { EmailPreview } from './EmailPreview';
 
 const FormSchema = z.object({
-  wfhType: z.string().min(1, '请选择WFH类型'),
-  wfhDates: z.string().min(1, '请输入WFH日期'),
-  reason: z.string().min(1, '请输入原因'),
+  wfhType: z.string().min(1, '选择WFH类型'),
+  wfhDates: z.string().min(1, '输入WFH日期'),
+  reason: z.string().min(1, '输入原因'),
   name: z.string().optional(),
 });
 
@@ -165,7 +165,7 @@ ${htmlPreview}
             {...register('reason')}
             className="textarea w-full"
             rows={4}
-            placeholder="请说明WFH原因（Emergency类型必填）"
+            placeholder="说明WFH原因（Emergency类型必填）"
           />
           {errors.reason && <p className="text-red-500 text-sm mt-1">{errors.reason.message}</p>}
         </div>

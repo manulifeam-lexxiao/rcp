@@ -23,6 +23,6 @@ describe('Home Page', () => {
     
     expect(screen.getByText('今日 WFH')).toBeInTheDocument();
     expect(screen.getByText('今日请假')).toBeInTheDocument();
-    expect(screen.getByText('WFH 安排表')).toBeInTheDocument();
+    expect(screen.getByText('常规 WFH 安排表')).toBeInTheDocument();
   });
 });

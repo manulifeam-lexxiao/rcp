@@ -8,11 +8,11 @@ import { buildMailtoLink } from '@/features/email/builder/linkBuilder';
 import { EmailPreview } from './EmailPreview';
 
 const FormSchema = z.object({
-  startDate: z.string().min(1, '请选择开始日期'),
-  endDate: z.string().min(1, '请选择结束日期'),
-  reason: z.string().min(1, '请输入请假原因'),
-  backup: z.string().min(1, '请输入备份人员'),
-  contact: z.string().min(1, '请输入联系方式'),
+  startDate: z.string().min(1, '选择开始日期'),
+  endDate: z.string().min(1, '选择结束日期'),
+  reason: z.string().min(1, '输入请假原因'),
+  backup: z.string().min(1, '输入BACKUP'),
+  contact: z.string().min(1, '输入联系方式'),
   name: z.string().optional(),
 });
 
@@ -192,7 +192,7 @@ ${htmlPreview}
             {...register('reason')}
             className="textarea w-full"
             rows={4}
-            placeholder="请说明请假原因"
+            placeholder="说明请假原因"
           />
           {errors.reason && <p className="text-red-500 text-sm mt-1">{errors.reason.message}</p>}
         </div>
