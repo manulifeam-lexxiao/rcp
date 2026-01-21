@@ -153,6 +153,9 @@ npm run dev              # 启动开发服务器
 npm run build            # 生产构建
 npm run preview          # 预览生产构建
 
+# 数据同步
+npm run sync             # 从 Excel 同步数据到 JSON
+
 # 代码质量
 npm run typecheck        # TypeScript 类型检查
 npm run lint             # ESLint 代码检查
@@ -239,6 +242,35 @@ npm run build
 | [测试指南](./docs/testing.md) | 测试策略与最佳实践 |
 | [更新日志](./docs/CHANGELOG.md) | 版本历史与变更记录 |
 | [演示说明](./docs/DEMO.md) | 功能演示与使用指南 |
+
+## 🔄 自动化脚本
+
+### 一键同步并推送数据
+
+项目提供了自动化脚本来简化数据同步和提交流程：
+
+**Windows 批处理脚本：**
+```bash
+# 双击运行或在命令行执行
+.\sync-and-push.bat
+```
+
+**PowerShell 脚本：**
+```powershell
+# 在 PowerShell 中执行
+.\sync-and-push.ps1
+```
+
+脚本会自动执行以下操作：
+1. 运行 `npm run sync` 同步 Excel 数据
+2. 使用 `git add .` 添加所有更改
+3. 创建带时间戳的提交：`* data 2026-01-21 10:30:00`
+4. 推送到远程仓库
+
+**注意：** 首次运行 PowerShell 脚本可能需要设置执行策略：
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ## 🤝 贡献
 
