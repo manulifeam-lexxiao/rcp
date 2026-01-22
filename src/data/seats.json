@@ -1,0 +1,27 @@
+[
+  {
+    "weekday": "MON",
+    "dayName": "周一",
+    "available": 12
+  },
+  {
+    "weekday": "TUE",
+    "dayName": "周二",
+    "available": 7
+  },
+  {
+    "weekday": "WED",
+    "dayName": "周三",
+    "available": -4
+  },
+  {
+    "weekday": "THU",
+    "dayName": "周四",
+    "available": 3
+  },
+  {
+    "weekday": "FRI",
+    "dayName": "周五",
+    "available": 9
+  }
+]

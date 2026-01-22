@@ -17,10 +17,12 @@ const __dirname = path.dirname(__filename);
 
 // 配置
 const EXCEL_PATH = 'C:\\Users\\lexxiao\\OneDrive - Manulife\\MANAGEMENT\\attendance\\LeavePlan2026.xlsx';
+const SEATS_EXCEL_PATH = 'C:\\Users\\lexxiao\\OneDrive - Manulife\\JOB\\7FSeats.xlsx';
 const DATA_DIR = path.join(__dirname, '../src/data');
 const WFH_FILE = path.join(DATA_DIR, 'wfh.json');
 const WFH_TEMP_FILE = path.join(DATA_DIR, 'wfh-temporary.json');
 const LEAVE_FILE = path.join(DATA_DIR, 'leave.json');
+const SEATS_FILE = path.join(DATA_DIR, 'seats.json');
 
 // 工作日映射（WFHStatus sheet）
 const WEEKDAY_COLS = {
@@ -196,6 +198,40 @@ function parseMonthlySheets(workbook) {
 }
 
 /**
+ * 解析座位数据（从 7FSeats.xlsx 的 SEATS sheet）
+ */
+function parseSeats() {
+  console.log('\n📊 解析座位数据...');
+  
+  if (!fs.existsSync(SEATS_EXCEL_PATH)) {
+    console.warn(`⚠️ 座位 Excel 文件不存在: ${SEATS_EXCEL_PATH}`);
+    return [];
+  }
+  
+  const workbook = XLSX.readFile(SEATS_EXCEL_PATH);
+  const sheetName = 'SEATS';
+  
+  if (!workbook.Sheets[sheetName]) {
+    console.warn(`⚠️ 找不到 sheet: ${sheetName}`);
+    return [];
+  }
+  
+  const sheet = workbook.Sheets[sheetName];
+  
+  // 读取 F14-J14 单元格（周一到周五的空余座位）
+  const seats = [
+    { weekday: 'MON', dayName: '周一', available: sheet['F14']?.v || 0 },
+    { weekday: 'TUE', dayName: '周二', available: sheet['G14']?.v || 0 },
+    { weekday: 'WED', dayName: '周三', available: sheet['H14']?.v || 0 },
+    { weekday: 'THU', dayName: '周四', available: sheet['I14']?.v || 0 },
+    { weekday: 'FRI', dayName: '周五', available: sheet['J14']?.v || 0 }
+  ];
+  
+  console.log(`✅ 解析了 ${seats.length} 天的座位数据`);
+  return seats;
+}
+
+/**
  * 保存 JSON 文件
  */
 function saveJSON(filePath, data) {
@@ -222,17 +258,22 @@ function main() {
     // 3. 解析临时 WFH 和请假
     const { tempWFHRecords, leaveRecords } = parseMonthlySheets(workbook);
     
-    // 4. 保存文件
+    // 4. 解析座位数据
+    const seatRecords = parseSeats();
+    
+    // 5. 保存文件
     console.log('\n💾 保存数据文件...');
     saveJSON(WFH_FILE, wfhRecords);
     saveJSON(WFH_TEMP_FILE, tempWFHRecords);
     saveJSON(LEAVE_FILE, leaveRecords);
+    saveJSON(SEATS_FILE, seatRecords);
     
     console.log('\n✨ 同步完成！');
     console.log('\n📝 数据统计:');
     console.log(`   - 常规 WFH: ${wfhRecords.length} 条`);
     console.log(`   - 临时 WFH: ${tempWFHRecords.length} 条`);
     console.log(`   - 请假记录: ${leaveRecords.length} 条`);
+    console.log(`   - 座位数据: ${seatRecords.length} 天`);
     
   } catch (error) {
     console.error('\n❌ 同步失败:', error.message);
