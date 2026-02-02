@@ -45,7 +45,8 @@
   },
   {
     "name": "Iron Xia",
-    "leaveDate": "2026-01-02"
+    "leaveDate": "2026-01-02",
+    "part": "am"
   },
   {
     "name": "Iron Xia",
@@ -67,6 +68,11 @@
   {
     "name": "Layne Wang",
     "leaveDate": "2026-01-23"
+  },
+  {
+    "name": "Layne Wang",
+    "leaveDate": "2026-01-30",
+    "part": "am"
   },
   {
     "name": "Lex Xiao",
@@ -270,6 +276,11 @@
   },
   {
     "name": "Dylan Xie",
+    "leaveDate": "2026-02-09",
+    "part": "am"
+  },
+  {
+    "name": "Dylan Xie",
     "leaveDate": "2026-02-10"
   },
   {
@@ -310,7 +321,7 @@
   },
   {
     "name": "Iron Xia",
-    "leaveDate": "2026-02-20"
+    "leaveDate": "2026-02-13"
   },
   {
     "name": "Iron Xia",
@@ -437,12 +448,28 @@
     "leaveDate": "2026-02-27"
   },
   {
+    "name": "Mark Ma",
+    "leaveDate": "2026-02-03"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-02-04"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-02-05"
+  },
+  {
     "name": "Max Chen",
     "leaveDate": "2026-02-20"
   },
   {
     "name": "Monster Wang",
     "leaveDate": "2026-02-20"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-02-27"
   },
   {
     "name": "Nevin Li",
@@ -471,6 +498,10 @@
   {
     "name": "Peter Li",
     "leaveDate": "2026-02-20"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-02-23"
   },
   {
     "name": "Rain Gu",
@@ -509,8 +540,104 @@
     "leaveDate": "2026-02-20"
   },
   {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-03-09"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-03-10"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-03-30"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-03-04"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-03-10"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-03-02"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-03-03"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-03-03"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-03-20"
+  },
+  {
+    "name": "Reese Li",
+    "leaveDate": "2026-03-31"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-04-03"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-04-03"
+  },
+  {
+    "name": "Hans Xiao",
+    "leaveDate": "2026-04-02"
+  },
+  {
+    "name": "Hans Xiao",
+    "leaveDate": "2026-04-03"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-04-07"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-04-08"
+  },
+  {
     "name": "Layne Wang",
     "leaveDate": "2026-04-15"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-04-07"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-04-01"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-04-02"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-04-07"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-04-14"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-04-30"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-04-07"
+  },
+  {
+    "name": "Vae Wang",
+    "leaveDate": "2026-04-07"
   },
   {
     "name": "Zick Ling",
@@ -521,44 +648,492 @@
     "leaveDate": "2026-04-30"
   },
   {
+    "name": "Alex Yang",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-05-06"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-05-05"
+  },
+  {
     "name": "Layne Wang",
     "leaveDate": "2026-05-15"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-05-06"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-05-26"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-05-29"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-06-01"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-06-18"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-06-03"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-06-22"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-06-23"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-06-24"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-06-25"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-06-26"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-06-01"
   },
   {
     "name": "Layne Wang",
     "leaveDate": "2026-06-15"
   },
   {
-    "name": "Zick Ling",
+    "name": "Louis Meng",
+    "leaveDate": "2026-06-01"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-06-02"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-06-18"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-06-15"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-06-16"
+  },
+  {
+    "name": "Rain Gu",
     "leaveDate": "2026-06-22"
   },
   {
-    "name": "Zick Ling",
+    "name": "Rain Gu",
     "leaveDate": "2026-06-23"
   },
   {
-    "name": "Zick Ling",
+    "name": "Rain Gu",
     "leaveDate": "2026-06-24"
   },
   {
-    "name": "Zick Ling",
-    "leaveDate": "2026-06-25"
+    "name": "Reese Li",
+    "leaveDate": "2026-06-01"
   },
   {
-    "name": "Zick Ling",
-    "leaveDate": "2026-06-26"
+    "name": "Allen Qiao",
+    "leaveDate": "2026-07-13"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-07-01"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-07-13"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-07-14"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-07-13"
   },
   {
     "name": "Layne Wang",
     "leaveDate": "2026-07-15"
   },
   {
+    "name": "Louis Meng",
+    "leaveDate": "2026-07-06"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-07-07"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-07-01"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-07-02"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-07-23"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-07-24"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-07-14"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-07-15"
+  },
+  {
+    "name": "Oliver Dong",
+    "leaveDate": "2026-07-20"
+  },
+  {
+    "name": "Oliver Dong",
+    "leaveDate": "2026-07-21"
+  },
+  {
+    "name": "Oliver Dong",
+    "leaveDate": "2026-07-22"
+  },
+  {
+    "name": "Oliver Dong",
+    "leaveDate": "2026-07-23"
+  },
+  {
+    "name": "Parry Pan",
+    "leaveDate": "2026-07-15"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-07-06"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-07-07"
+  },
+  {
+    "name": "Zick Ling",
+    "leaveDate": "2026-07-20"
+  },
+  {
+    "name": "Zick Ling",
+    "leaveDate": "2026-07-21"
+  },
+  {
+    "name": "Zick Ling",
+    "leaveDate": "2026-07-22"
+  },
+  {
+    "name": "Zick Ling",
+    "leaveDate": "2026-07-23"
+  },
+  {
+    "name": "Zick Ling",
+    "leaveDate": "2026-07-24"
+  },
+  {
+    "name": "Allen Qiao",
+    "leaveDate": "2026-08-24"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-08-05"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-08-17"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-08-18"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-08-17"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-08-03"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-08-04"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-08-05"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-08-06"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-08-07"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-08-03"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-08-04"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-08-05"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-08-03"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-08-07"
+  },
+  {
+    "name": "Reese Li",
+    "leaveDate": "2026-08-31"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-09-02"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-09-28"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-09-29"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-09-30"
+  },
+  {
     "name": "Layne Wang",
     "leaveDate": "2026-09-15"
   },
   {
+    "name": "Louis Meng",
+    "leaveDate": "2026-09-07"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-09-28"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-09-29"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-09-30"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-09-08"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-09-28"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-09-29"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-09-30"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-10-08"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-10-08"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-10-09"
+  },
+  {
     "name": "Layne Wang",
     "leaveDate": "2026-10-15"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-10-08"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-10-09"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Mark Ma",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Monster Wang",
+    "leaveDate": "2026-10-20"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "Reese Li",
+    "leaveDate": "2026-10-30"
+  },
+  {
+    "name": "Vae Wang",
+    "leaveDate": "2026-10-06"
+  },
+  {
+    "name": "Vae Wang",
+    "leaveDate": "2026-10-07"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-11-04"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-11-12"
+  },
+  {
+    "name": "Jim Hu",
+    "leaveDate": "2026-11-13"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-11-12"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-11-13"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-11-26"
+  },
+  {
+    "name": "Max Chen",
+    "leaveDate": "2026-11-27"
+  },
+  {
+    "name": "Peter Li",
+    "leaveDate": "2026-11-27"
+  },
+  {
+    "name": "DK Xiong",
+    "leaveDate": "2026-12-02"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-12-24"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-12-25"
+  },
+  {
+    "name": "Dylan Xie",
+    "leaveDate": "2026-12-31"
+  },
+  {
+    "name": "Iron Xia",
+    "leaveDate": "2026-12-31"
   },
   {
     "name": "Layne Wang",
@@ -575,5 +1150,17 @@
   {
     "name": "Zick Ling",
     "leaveDate": "2026-12-25"
+  },
+  {
+    "name": "Iris Li",
+    "leaveDate": "2026-12-28"
+  },
+  {
+    "name": "Iris Li",
+    "leaveDate": "2026-12-29"
+  },
+  {
+    "name": "Iris Li",
+    "leaveDate": "2026-12-30"
   }
 ]

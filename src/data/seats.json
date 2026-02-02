@@ -2,26 +2,26 @@
   {
     "weekday": "MON",
     "dayName": "周一",
-    "available": 12
+    "available": 30
   },
   {
     "weekday": "TUE",
     "dayName": "周二",
-    "available": 7
+    "available": 36
   },
   {
     "weekday": "WED",
     "dayName": "周三",
-    "available": -4
+    "available": 47
   },
   {
     "weekday": "THU",
     "dayName": "周四",
-    "available": 3
+    "available": 40
   },
   {
     "weekday": "FRI",
     "dayName": "周五",
-    "available": 9
+    "available": 34
   }
 ]
