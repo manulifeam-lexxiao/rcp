@@ -1,7 +1,6 @@
 import { format, addDays } from 'date-fns';
 import { WFHData, LeaveData } from '@/services/recordService';
 import { useState } from 'react';
-import seatsData from '@/data/seats.json';
 
 export default function Home() {
   const today = format(new Date(), 'yyyy-MM-dd');
@@ -33,10 +32,6 @@ export default function Home() {
   const wfhNames = WFHData.getWFHToday(currentWeekdayEn, today);
   const leaveRecords = LeaveData.getToday(today);
   const allWFHRecords = WFHData.getAll();
-  
-  // 获取今日空余座位
-  const todaySeats = seatsData.find(seat => seat.weekday === currentWeekdayEn);
-  const availableSeats = todaySeats?.available ?? null;
   // 获取从今天开始的7天请假记录
   const next7DaysLeaveRecords = LeaveData.getAll().filter(record => {
     const leaveDate = new Date(record.leaveDate);
@@ -67,16 +62,6 @@ export default function Home() {
       {/* Hero Section with MFCentral style */}
       <section className="bg-primary text-white rounded p-10 shadow-sm">
         <h1 className="text-28 font-demibold mb-4 text-white">Retirement ChengDu Portal</h1>
-        {availableSeats !== null && (
-          <p className="text-18 font-light">
-            今日空余座位（整个GWAM区）：
-            <span 
-              className={`font-demibold ml-2 ${availableSeats < 0 ? 'text-red-300' : 'text-green-300'}`}
-            >
-              {availableSeats}
-            </span>
-          </p>
-        )}
       </section>
 
       {/* 今日快速概览 - 2列布局 */}
