@@ -565,6 +565,27 @@
     "leaveDate": "2026-03-30"
   },
   {
+    "name": "Dave Meng",
+    "leaveDate": "2026-03-06"
+  },
+  {
+    "name": "Dave Meng",
+    "leaveDate": "2026-03-12"
+  },
+  {
+    "name": "Dave Meng",
+    "leaveDate": "2026-03-13"
+  },
+  {
+    "name": "Dave Meng",
+    "leaveDate": "2026-03-20"
+  },
+  {
+    "name": "Dave Meng",
+    "leaveDate": "2026-03-27",
+    "part": "pm"
+  },
+  {
     "name": "DK Xiong",
     "leaveDate": "2026-03-04"
   },
@@ -575,10 +596,6 @@
   {
     "name": "Louis Meng",
     "leaveDate": "2026-03-02"
-  },
-  {
-    "name": "Louis Meng",
-    "leaveDate": "2026-03-03"
   },
   {
     "name": "Monster Wang",
@@ -774,6 +791,10 @@
   },
   {
     "name": "Rain Gu",
+    "leaveDate": "2026-06-18"
+  },
+  {
+    "name": "Rain Gu",
     "leaveDate": "2026-06-22"
   },
   {
@@ -783,6 +804,14 @@
   {
     "name": "Rain Gu",
     "leaveDate": "2026-06-24"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-06-25"
+  },
+  {
+    "name": "Rain Gu",
+    "leaveDate": "2026-06-26"
   },
   {
     "name": "Reese Li",
