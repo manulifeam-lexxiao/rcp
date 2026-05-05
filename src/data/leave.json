@@ -680,6 +680,10 @@
   },
   {
     "name": "Peter Li",
+    "leaveDate": "2026-04-24"
+  },
+  {
+    "name": "Peter Li",
     "leaveDate": "2026-04-30"
   },
   {
@@ -716,11 +720,20 @@
   },
   {
     "name": "Layne Wang",
+    "leaveDate": "2026-05-06"
+  },
+  {
+    "name": "Layne Wang",
     "leaveDate": "2026-05-15"
   },
   {
     "name": "Louis Meng",
     "leaveDate": "2026-05-05"
+  },
+  {
+    "name": "Louis Meng",
+    "leaveDate": "2026-05-06",
+    "part": "pm"
   },
   {
     "name": "Mark Ma",
