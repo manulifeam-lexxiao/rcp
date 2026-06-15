@@ -63,6 +63,7 @@
   {
     "name": "Louis Meng",
     "weekdays": [
+      "MON",
       "THU",
       "FRI"
     ]
@@ -91,15 +92,17 @@
   {
     "name": "Nevin Li",
     "weekdays": [
-      "MON",
-      "TUE"
+      "WED",
+      "THU",
+      "FRI"
     ]
   },
   {
     "name": "Oliver Dong",
     "weekdays": [
       "WED",
-      "THU"
+      "THU",
+      "FRI"
     ]
   },
   {
