@@ -2,7 +2,6 @@
   {
     "name": "Alex Yang",
     "weekdays": [
-      "WED",
       "THU",
       "FRI"
     ]
@@ -10,14 +9,14 @@
   {
     "name": "Dave Meng",
     "weekdays": [
-      "MON",
-      "TUE"
+      "THU",
+      "FRI"
     ]
   },
   {
     "name": "DK Xiong",
     "weekdays": [
-      "MON",
+      "TUE",
       "WED"
     ]
   },
@@ -32,8 +31,7 @@
     "name": "Iris Li",
     "weekdays": [
       "WED",
-      "THU",
-      "FRI"
+      "THU"
     ]
   },
   {
@@ -48,14 +46,12 @@
     "name": "Jim Hu",
     "weekdays": [
       "TUE",
-      "WED",
-      "THU"
+      "WED"
     ]
   },
   {
     "name": "Layne Wang",
     "weekdays": [
-      "WED",
       "THU",
       "FRI"
     ]
@@ -63,7 +59,6 @@
   {
     "name": "Louis Meng",
     "weekdays": [
-      "MON",
       "THU",
       "FRI"
     ]
@@ -71,15 +66,15 @@
   {
     "name": "Mark Ma",
     "weekdays": [
-      "TUE",
+      "MON",
       "FRI"
     ]
   },
   {
     "name": "Max Chen",
     "weekdays": [
-      "WED",
-      "THU"
+      "THU",
+      "FRI"
     ]
   },
   {
@@ -92,7 +87,6 @@
   {
     "name": "Nevin Li",
     "weekdays": [
-      "WED",
       "THU",
       "FRI"
     ]
@@ -108,8 +102,7 @@
   {
     "name": "Parry Pan",
     "weekdays": [
-      "WED",
-      "THU",
+      "MON",
       "FRI"
     ]
   },
@@ -123,15 +116,13 @@
   {
     "name": "Rain Gu",
     "weekdays": [
-      "TUE",
       "WED",
-      "THU"
+      "FRI"
     ]
   },
   {
     "name": "Reese Li",
     "weekdays": [
-      "WED",
       "THU",
       "FRI"
     ]
@@ -148,6 +139,13 @@
     "weekdays": [
       "MON",
       "TUE"
+    ]
+  },
+  {
+    "name": "Bram You",
+    "weekdays": [
+      "WED",
+      "THU"
     ]
   }
 ]
